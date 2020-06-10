@@ -1,4 +1,5 @@
 # AzureOps powershell module
+
 [CloudNotes.io](https://www.cloudnotes.io)
 
 ## Prequisites
@@ -9,7 +10,8 @@
 
 ### Windows
 
-Download the zip file or cloune the repo locally: copy the AzureOps folder under 
+Download the zip file or cloune the repo locally: copy the AzureOps folder under
+
 - `$env:PSUserProfile\Documents\WindowsPowershell\Modules` folder (for Windows Powershell)
 - `$env:PSUserProfile\Documents\Powershell\Modules` folder (for Powershell 7 / Powershell Core)
 
