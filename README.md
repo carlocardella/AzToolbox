@@ -3,7 +3,7 @@
 
 ## Prequisites
 
-- Azure "Az" modules: (https://docs.microsoft.com/en-us/powershell/azure/install-az-ps?view=azps-1.8.0)
+- Azure "Az" modules: (https://docs.microsoft.com/en-us/powershell/azure/install-az-ps)
 
 ## Installation
 
