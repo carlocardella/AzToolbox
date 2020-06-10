@@ -15,4 +15,4 @@ Download the zip file or cloune the repo locally: copy the AzureOps folder under
 
 ### macOS
 
-Download the zip file or cloune the repo locally: copy the LSECosmos folder under `/Users/<user>/.local/share/powershell/Modules/` folder
+Download the zip file or cloune the repo locally: copy the AzureOps folder under `/Users/<user>/.local/share/powershell/Modules/` folder
