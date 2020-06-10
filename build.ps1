@@ -14,6 +14,6 @@ if (!(Get-Module -ListAvailable 'Pster').Version.Major -contains 5) {
     Install-Module -Name 'Pester' -Scope 'CurrentUser' -Force -AcceptLicense -AllowClobber -SkipPublisherCheck -Repository 'PSGallery'
 }
 
-Import-Module -Name 'Pester' -MinimumVersion [String.Version]::new(5, 0)
+Import-Module -Name 'Pester' -MinimumVersion $([String.Version]::new(5, 0))
 
-Invoke-Pester -Path "$PSScriptRoot/src/AzureOps"
+Invoke-Pester -Path "$PSScriptRoot/Tests/" -OutputFile "$PSScriptRoot/PesterResults.xml" -OutputFormat 'NUnitXML' -CodeCoverage "$PSScriptRoot/src/Azureops/*.ps1" -PassThru
