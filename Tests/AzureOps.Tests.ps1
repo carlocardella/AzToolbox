@@ -8,8 +8,8 @@ $pesterPreference.CodeCoverage.Enabled = $true
 Describe 'AzureOps' {
     Context -Name 'Test-IsGuid' -Tag 'TestIsGuid' {
         BeforeAll {
-            $guid = 1..5 | ForEach-Object { [Guid]::NewGuid() }
-            $notGuid = @('teststring', '234gd', 'asddfghhjk234567.', '123345456568', 'a1b2c3')
+            $guid = 1..3 | ForEach-Object { [Guid]::NewGuid() }
+            $notGuid = @('teststring', '234gd', 'asddfghhjk234567.')
         }
 
         It 'Can validate a GUID' {
@@ -59,8 +59,8 @@ Describe 'AzureOps' {
             
             # pipeline
             { $hexadecimal | Test-IsHexadecimal } | Should -Not -Throw
-            { $notHex  | Test-IsHexadecimal } | Should -Not -Throw
-            $hexadecimal | Test-IsHexadecimal  | Should -BeTrue
+            { $notHex | Test-IsHexadecimal } | Should -Not -Throw
+            $hexadecimal | Test-IsHexadecimal | Should -BeTrue
             $notHex | Test-IsHexadecimal | Should -BeFalse
         }
     }
