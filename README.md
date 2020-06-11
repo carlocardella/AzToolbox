@@ -1,10 +1,11 @@
 # AzureOps powershell module
 
+![CI](https://github.com/carlocardella/AzureOps/workflows/CI/badge.svg)
+
 [CloudNotes.io](https://www.cloudnotes.io)
 
 ## Prequisites
 
-- Azure "Az" modules: (https://docs.microsoft.com/en-us/powershell/azure/install-az-ps)
 
 ## Installation
 
