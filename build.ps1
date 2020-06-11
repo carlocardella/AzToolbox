@@ -10,10 +10,10 @@ param (
     [switch]$Patch
 )
 
-# if (!(Get-Module -ListAvailable 'Pester').Version.Major -contains 5) {
-Install-Module -Name 'Pester' -Force -AcceptLicense -AllowClobber -SkipPublisherCheck -Repository 'PSGallery' -Verbose -MinimumVersion '5.0.0.0' -ErrorAction 'Stop'
-# }
+if ((Get-Module -ListAvailable 'Pester').Version.Major -notcontains 5) {
+    Install-Module -Name 'Pester' -Force -AcceptLicense -AllowClobber -SkipPublisherCheck -Repository 'PSGallery' -Verbose -MinimumVersion '5.0.0.0' -ErrorAction 'Stop'
+}
 
-Import-Module -Name 'Pester' -MinimumVersion $([System.Version]::new(5, 0))
+Import-Module -Name 'Pester' -MinimumVersion $([System.Version]::new(5, 0)) -ErrorAction 'Stop'
 
-Invoke-Pester -Path "$PSScriptRoot/Tests/" -OutputFile "$PSScriptRoot/PesterResults.xml" -OutputFormat 'NUnitXML' -CodeCoverage "$PSScriptRoot/src/AzureOps/*.ps1" -PassThru
+Invoke-Pester -Path "$PSScriptRoot/Tests/" -Output Detailed -CI -PassThru
