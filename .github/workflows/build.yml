@@ -22,7 +22,11 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
     
-    - name: BuildModule
+    - name: gmo
       shell: pwsh
-      run: ../../build.ps1
+      run: if (!(Get-Module -ListAvailable 'Pester').Version.Major -contains 5) { 'install' } else { 'use it' }
+    
+#     - name: BuildModule
+#       shell: pwsh
+#       run: ../../build.ps1
     
