@@ -16,4 +16,4 @@ if (!(Get-Module -ListAvailable 'Pster').Version.Major -contains 5) {
 
 Import-Module -Name 'Pester' -MinimumVersion $([String.Version]::new(5, 0))
 
-Invoke-Pester -Path "$PSScriptRoot/Tests/" -OutputFile "$PSScriptRoot/PesterResults.xml" -OutputFormat 'NUnitXML' -CodeCoverage "$PSScriptRoot/src/Azureops/*.ps1" -PassThru
+Invoke-Pester -Path "$PSScriptRoot/Tests/" -OutputFile "$PSScriptRoot/PesterResults.xml" -OutputFormat 'NUnitXML' -CodeCoverage "$PSScriptRoot/src/AzureOps/*.ps1" -PassThru
