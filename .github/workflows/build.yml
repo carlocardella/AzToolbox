@@ -27,7 +27,23 @@ jobs:
       with:
         inlineScript: dotnet --version
         azPSVersion: latest
-        
+    
+    - name: PowerShell script
+      uses: Amadevus/pwsh-script@v1.0.0
+      with:
+#         # PowerShell script to execute in Actions-hydrated context
+        script: gmo -l
+#         # 'github' workflow context
+#         github: # optional, default is ${{ toJson(github) }}
+#         # 'job' workflow context
+#         job: # optional, default is ${{ toJson(job) }}
+#         # 'runner' workflow context
+#         runner: # optional, default is ${{ toJson(runner) }}
+#         # 'strategy' workflow context
+#         strategy: # optional, default is ${{ toJson(strategy) }}
+#         # 'matrix' workflow context
+#         matrix: # optional, default is ${{ toJson(matrix) }}
+    
     - name: build.ps1
       uses: Azure/powershell@v1
       with:
