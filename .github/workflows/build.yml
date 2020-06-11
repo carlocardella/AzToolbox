@@ -21,11 +21,14 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-#     - name: run build.ps1
-#       run: ./build.ps1
-#       shell: pwsh
     
-    - name: Azure PowerShell Action
+    - name: dotnet version
+      uses: Azure/powershell@v1
+      with:
+        inlineScript: dotnet --version
+        azPSVersion: latest
+        
+    - name: build.ps1
       uses: Azure/powershell@v1
       with:
         # Specify the Az PowerShell script here.
