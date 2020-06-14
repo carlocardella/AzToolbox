@@ -32,7 +32,7 @@ jobs:
 
     - name: Publish to Powershell Gallery
       uses: Amadevus/pwsh-script@v1.0.0
-    - shell: pwsh
-      env:
-        psgallerykey: ${{ secrets.PSGalleryKey }}
-      run: Publish-Module -Path ../../src/AzureOps/ -NuGetApiKey $env:psgallerykey
+      with:
+        env: |
+          psgallerykey: ${{ secrets.PSGalleryKey }}
+        script: Publish-Module -Path ../../src/AzureOps/ -NuGetApiKey $env:psgallerykey
