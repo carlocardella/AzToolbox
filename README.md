@@ -1,4 +1,4 @@
-# AzureOps powershell module
+# AzureOps
 
 [CloudNotes.io](https://www.cloudnotes.io)
 
