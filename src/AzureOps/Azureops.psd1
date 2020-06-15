@@ -98,7 +98,7 @@
             # Tags = @()
 
             # A URL to the license for this module.
-            LicenseUri = 'https://github.com/carlocardella/LICENSE.MD'
+            LicenseUri = 'https://github.com/carlocardella/AzureOps/blob/master/LICENSE.MD'
 
             # A URL to the main website for this project.
             ProjectUri = 'https://github.com/carlocardella/AzureOps.git'
