@@ -30,9 +30,15 @@ jobs:
         # Azure PS version to be used to execute the script, example: 1.8.0, 2.8.0, 3.4.0. To use the latest version, specify "latest".
         azPSVersion: latest
 
-    - name: Publish to Powershell Gallery
-      uses: Amadevus/pwsh-script@v1.0.0
-      with:
-        env: |
-          psgallerykey: ${{ secrets.PSGalleryKey }}
-        script: Publish-Module -Path ../../src/AzureOps/ -NuGetApiKey $env:psgallerykey
+#     - name: Publish to Powershell Gallery
+#       uses: Amadevus/pwsh-script@v1.0.0
+#       with:
+#         env: |
+#           psgallerykey: ${{ secrets.PSGalleryKey }}
+#         script: Publish-Module -Path ../../src/AzureOps/ -NuGetApiKey $env:psgallerykey
+
+    - shell: pwsh
+      env: 
+        PSGalleryKey: ${{ secrets.PSGalleryKey }}
+      run : |
+        Publish-Module -Path ../../src/AzureOps/ -NuGetApiKey "$env:psgallerykey"
