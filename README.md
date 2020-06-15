@@ -2,6 +2,8 @@
 
 [CloudNotes.io](https://www.cloudnotes.io)
 
+The module contains a collection of utility functions to work with Azure resources and Resource Providers
+
 ## Prequisites
 
 - Azure "Az" modules: (https://docs.microsoft.com/en-us/powershell/azure/install-az-ps)
