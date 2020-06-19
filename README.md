@@ -1,6 +1,6 @@
-# AzureOps
+# AzureToolbox
 
-![CI](https://github.com/carlocardella/AzureOps/workflows/CI/badge.svg)
+![CI](https://github.com/carlocardella/AzureToolbox/workflows/CI/badge.svg)
 
 [CloudNotes.io](https://www.cloudnotes.io)
 
@@ -19,11 +19,11 @@ Install the latest `Az` module:
 
 ### Windows
 
-Download the zip file or cloune the repo locally: copy the AzureOps folder under
+Download the zip file or cloune the repo locally: copy the AzureToolbox folder under
 
 - `$env:PSUserProfile\Documents\WindowsPowershell\Modules` folder (for Windows Powershell)
 - `$env:PSUserProfile\Documents\Powershell\Modules` folder (for Powershell 7 / Powershell Core)
 
 ### macOS
 
-Download the zip file or cloune the repo locally: copy the AzureOps folder under `/Users/<user>/.local/share/powershell/Modules/` folder
+Download the zip file or cloune the repo locally: copy the AzureToolbox folder under `/Users/<user>/.local/share/powershell/Modules/` folder
