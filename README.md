@@ -2,7 +2,7 @@
 
 [CloudNotes.io](https://www.cloudnotes.io)
 
-The module contains a collection of utility functions to work with Azure resources and Resource Providers
+The module contains a collection functions to work with Azure resources
 
 ## Prequisites
 
