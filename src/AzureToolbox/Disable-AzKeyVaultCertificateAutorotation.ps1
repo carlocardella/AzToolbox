@@ -4,7 +4,7 @@ function Disable-AzKeyVaultCertificateAutorotation {
     Disable KeyVault certificate autorotation
 
     .PARAMETER VaultName
-    KeyVault name, by default OaaSCdoProdVaule
+    KeyVault name
 
     .PARAMETER SecretName
     Secret Name of the certificate to disable autorotation for
@@ -16,7 +16,7 @@ function Disable-AzKeyVaultCertificateAutorotation {
     Specifies the number of days before expiration when automatic renewal should start
 
     .EXAMPLE
-    Get-OaaSKeyVaultCertificate mysubject | Disable-AzKeyVaultCertificateAutorotation -Verbose
+    Get-AzKeyVaultCertificate mysubject | Disable-AzKeyVaultCertificateAutorotation -Verbose
 
     VERBOSE:
 
