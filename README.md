@@ -10,6 +10,12 @@ The module contains a collection functions to work with Azure resources
 
 ## Installation
 
+### Powershell Gallery
+
+```powershell
+Install-Module -Name 'AzureToolbox' -AllowPrerelease -Scope 'CurrentUser'
+```
+
 ### Windows
 
 Download the zip file or cloune the repo locally: copy the AzureToolbox folder under
