@@ -9,31 +9,31 @@
 @{
 
     # Script module or binary module file associated with this manifest.
-    RootModule        = 'AzureToolbox.psm1'
+    RootModule           = 'AzToolbox.psm1'
 
     # Version number of this module.
-    ModuleVersion     = '0.0.1'
+    ModuleVersion        = '0.0.1'
 
     # Supported PSEditions
-    # CompatiblePSEditions = @()
+    CompatiblePSEditions = 'Core', 'Desktop'
 
     # ID used to uniquely identify this module
-    GUID              = '0db280ca-2039-4a3f-b950-7a2b663ca731'
+    GUID                 = '0db280ca-2039-4a3f-b950-7a2b663ca731'
 
     # Author of this module
-    Author            = 'Carlo Cardella'
+    Author               = 'Carlo Cardella'
 
     # Company or vendor of this module
-    CompanyName       = ''
+    CompanyName          = ''
 
     # Copyright statement for this module
-    Copyright         = '(c) Carlo Cardella. All rights reserved.'
+    Copyright            = '(c) Carlo Cardella. All rights reserved.'
 
     # Description of the functionality provided by this module
-    Description       = 'Collection of functions to facilitate Azure Operations'
+    Description          = 'Collection of functions to facilitate Azure Operations'
 
     # Minimum version of the PowerShell engine required by this module
-    PowerShellVersion = '5.1'
+    PowerShellVersion    = '5.1'
 
     # Name of the PowerShell host required by this module
     # PowerShellHostName = ''
@@ -60,25 +60,25 @@
     # ScriptsToProcess = @()
 
     # Type files (.ps1xml) to be loaded when importing this module
-    # TypesToProcess = 'AzureToolbox.Types.ps1xml'
+    # TypesToProcess = 'AzToolbox.Types.ps1xml'
 
     # Format files (.ps1xml) to be loaded when importing this module
-    # FormatsToProcess = 'AzureToolbox.Formats.ps1xml'
+    # FormatsToProcess = 'AzToolbox.Formats.ps1xml'
 
     # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
     # NestedModules = @()
 
     # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-    FunctionsToExport = '*'
+    FunctionsToExport    = '*'
 
     # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-    CmdletsToExport   = '*'
+    CmdletsToExport      = '*'
 
     # Variables to export from this module
-    VariablesToExport = '*'
+    VariablesToExport    = '*'
 
     # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
-    AliasesToExport   = '*'
+    AliasesToExport      = '*'
 
     # DSC resources to export from this module
     #     # DscResourcesToExport = @()
@@ -90,7 +90,7 @@
     #     # FileList = @()
 
     # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
-    PrivateData       = @{
+    PrivateData          = @{
 
         PSData = @{
 
@@ -98,10 +98,10 @@
             # Tags = @()
 
             # A URL to the license for this module.
-            LicenseUri = 'https://github.com/carlocardella/AzureToolbox/blob/master/LICENSE.MD'
+            LicenseUri = 'https://github.com/carlocardella/AzToolbox/blob/master/LICENSE.MD'
 
             # A URL to the main website for this project.
-            ProjectUri = 'https://github.com/carlocardella/AzureToolbox.git'
+            ProjectUri = 'https://github.com/carlocardella/AzToolbox.git'
 
             # A URL to an icon representing this module.
             # IconUri = ''

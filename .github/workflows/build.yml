@@ -34,4 +34,4 @@ jobs:
       env: 
         PSGalleryKey: ${{ secrets.PSGalleryKey }}
       run : |
-        Publish-Module -Path src/AzureToolbox/ -NuGetApiKey "$env:PSGalleryKey" -Force
+        Publish-Module -Path src/AzToolbox/ -NuGetApiKey "$env:PSGalleryKey" -Force
