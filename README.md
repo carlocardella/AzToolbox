@@ -1,6 +1,6 @@
-# AzureToolbox
+# AzToolbox
 
-![CI](https://github.com/carlocardella/AzureToolbox/workflows/CI/badge.svg)
+![CI](https://github.com/carlocardella/AzToolbox/workflows/CI/badge.svg)
 
 [CloudNotes.io](https://www.cloudnotes.io)
 
@@ -20,16 +20,16 @@ Install the latest `Az` module:
 ### Powershell Gallery
 
 ```powershell
-Install-Module -Name 'AzureToolbox' -AllowPrerelease -Scope 'CurrentUser'
+Install-Module -Name 'AzToolbox' -AllowPrerelease -Scope 'CurrentUser'
 ```
 
 ### Windows
 
-Download the zip file or cloune the repo locally: copy the AzureToolbox folder under
+Download the zip file or cloune the repo locally: copy the AzToolbox folder under
 
 - `$env:PSUserProfile\Documents\WindowsPowershell\Modules` folder (for Windows Powershell)
 - `$env:PSUserProfile\Documents\Powershell\Modules` folder (for Powershell 7 / Powershell Core)
 
 ### macOS
 
-Download the zip file or cloune the repo locally: copy the AzureToolbox folder under `/Users/<user>/.local/share/powershell/Modules/` folder
+Download the zip file or cloune the repo locally: copy the AzToolbox folder under `/Users/<user>/.local/share/powershell/Modules/` folder
