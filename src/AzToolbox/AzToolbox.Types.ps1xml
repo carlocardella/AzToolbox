@@ -15,6 +15,10 @@
       <Value>Url</Value>
     </NoteProperty>
     <NoteProperty>
+      <Name>Tag</Name>
+      <Value>Tag</Value>
+    </NoteProperty>
+    <NoteProperty>
       <Name>PreRelease</Name>
       <Value>PreRelease</Value>
     </NoteProperty>

@@ -19,6 +19,9 @@
                 <PropertyName>Url</PropertyName>
               </ListItem>
               <ListItem>
+                <PropertyName>Tag</PropertyName>
+              </ListItem>
+              <ListItem>
                 <PropertyName>PreRelease</PropertyName>
               </ListItem>
             </ListItems>
