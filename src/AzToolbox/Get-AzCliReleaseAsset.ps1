@@ -17,6 +17,7 @@ function Get-AzCliReleaseAsset {
     #>
     [cmdletbinding()]
     [OutputType('AzCliReleaseAsset')]
+    [OutputType('AzCliReleaseAssetRaw')]
     Param(
         [parameter()]
         [switch]$ListAvailable
