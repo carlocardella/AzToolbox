@@ -14,11 +14,11 @@ function Save-AzCliReleaseAsset {
     #>
     [CmdletBinding()]
     param (
-        [parameter()]
+        [parameter(Position = 0)]
         [ValidateSet('MSI', 'HomebrewFormula', 'UbuntuXenialDeb', 'UbuntuBionicDeb', 'RPM')]
         [string]$Package,
 
-        [parameter()]
+        [parameter(Position = 1)]
         [ValidateScript( { Test-Path -Path $_ -PathType 'Container' })]
         [string]$OutputFolder
     )
