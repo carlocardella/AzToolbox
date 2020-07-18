@@ -1,0 +1,23 @@
+<Types>
+<Type>
+  <Name>AzClliReleaseAsset</Name>
+  <Members>
+    <NoteProperty>
+      <Name>Name</Name>
+      <Value>Name</Value>
+    </NoteProperty>
+    <NoteProperty>
+      <Name>ReleaseDate</Name>
+      <Value>ReleaseDate</Value>
+    </NoteProperty>
+    <NoteProperty>
+      <Name>Url</Name>
+      <Value>Url</Value>
+    </NoteProperty>
+    <NoteProperty>
+      <Name>PreRelease</Name>
+      <Value>PreRelease</Value>
+    </NoteProperty>
+  </Members>
+</Type>
+</Types>
