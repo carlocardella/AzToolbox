@@ -1,4 +1,17 @@
 function Save-AzCliReleaseAsset {
+    <#
+    .SYNOPSIS
+    Downloads the Az CLI installer package
+    
+    .PARAMETER Package
+    Package type to download
+    
+    .PARAMETER OutputFolder
+    Target folder to download the package into
+    
+    .EXAMPLE
+    
+    #>
     [CmdletBinding()]
     param (
         [parameter()]
@@ -54,4 +67,7 @@ function Save-AzCliReleaseAsset {
     }
 
     Invoke-Webrequest -Uri $uri -UseBasicParsing -DisableKeepAlive -OutFile $destination
+    if ($?) {
+        Write-Verbose "Package downloaded: $destination"
+    }
 }
