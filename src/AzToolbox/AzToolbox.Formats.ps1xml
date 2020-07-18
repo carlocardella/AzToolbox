@@ -1,0 +1,30 @@
+<Configuration>
+  <ViewDefinitions>
+    <View>
+      <Name>AzCliReleaseAssetList</Name>
+      <ViewSelectedBy>
+        <TypeName>AzCliReleaseAsset</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <PropertyName>Name</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>ReleaseDate</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>Url</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>PreRelease</PropertyName>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+  </ViewDefinitions>
+</Configuration>
