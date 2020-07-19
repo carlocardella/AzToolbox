@@ -9,8 +9,17 @@ Describe 'AzToolbox' {
     Context -Name 'Get-AzCliReleaseAsset' -Tag 'GetAzCliReleaseAsset' {
         It 'Gets the latest Az CLI Release assets' {
             { Get-AzCliReleaseAsset } | Should -Not -Throw
-            (Get-AzCliReleaseAsset | Get-Member).TypeName[0] | Should -BeExactly 'AzCliReleaseAsset'
             @(Get-AzCliReleaseAsset).Count | Should -BeGreaterOrEqual 1
+        }
+        
+        It 'Returns a proper AzCliReleaseType object' {
+            (Get-AzCliReleaseAsset | Get-Member).TypeName[0] | Should -BeExactly 'AzCliReleaseAsset'
+            $assetObject = Get-AzCliReleaseAsset
+            $assetObject.Name | Should -not -BeNullOrEmpty
+            $assetObject.ReleaseDate | Should -not -BeNullOrEmpty
+            $assetObject.Url | Should -not -BeNullOrEmpty
+            $assetObject.Tag | Should -not -BeNullOrEmpty
+            $assetObject.PreRelease | Should -not -BeNullOrEmpty
         }
     }
 
