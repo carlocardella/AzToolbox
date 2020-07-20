@@ -4,21 +4,21 @@
     Queries a given Azure Subscription and returns the Traffic Manager profile and endpoint configuration
 
     .EXAMPLE
-    Get-AzTrafficManagerProfileInfo -ProfileName ae-events-prod-arm-1
+    Get-AzTrafficManagerProfileInfo -ProfileName MyTmProfile
 
-    ProfileName           : ae-events-prod-arm-1
+    ProfileName           : MyTmProfile
     ProfileStatus         : Enabled
-    ResourceGroupName     : ae-events-prod-arm-1
-    Endpoint              : ae-webhooks-prod-1a.cloudapp.net
+    ResourceGroupName     : myResourceGroup
+    Endpoint              : myCloudService.cloudapp.net
     Priority              : 1
     Weight                : 1
     EndpointStatus        : Disabled
     EndpointMonitorStatus :
 
-    ProfileName           : ae-events-prod-arm-1
+    ProfileName           : MyTmProfile
     ProfileStatus         : Enabled
-    ResourceGroupName     : ae-events-prod-arm-1
-    Endpoint              : ae-webhooks-prod-1b.cloudapp.net
+    ResourceGroupName     : myResourceGroup
+    Endpoint              : myCloudService.cloudapp.net
     Priority              : 2
     Weight                : 1
     EndpointStatus        : Enabled
