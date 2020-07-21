@@ -11,7 +11,7 @@ Describe 'AzToolbox' {
             { Get-AzCliReleaseAsset } | Should -Not -Throw
             @(Get-AzCliReleaseAsset).Count | Should -BeGreaterOrEqual 1
         }
-        
+
         It 'Returns a proper AzCliReleaseType object' {
             (Get-AzCliReleaseAsset | Get-Member).TypeName[0] | Should -BeExactly 'AzCliReleaseAsset'
             $assetObject = Get-AzCliReleaseAsset
@@ -27,5 +27,31 @@ Describe 'AzToolbox' {
         It 'Can download Az CLI release asset' {
             { Save-AzCliReleaseAsset -Package 'MSI' -OutputFolder $TestDrive } | Should -Not -Throw
         }
+    }
+
+    Context -Name 'Get-AzClientCertificate' -Tag 'GetAzClientCertificate' {
+        It 'Can retrieve the Public ARM certificate using the default parameter' {
+            { Get-AzClientCertificate } | Should -Not -Throw
+            (Get-AzClientCertificate).Certificate  | Should -Not -BeNullOrEmpty
+            @(Get-AzClientCertificate).Count | Should -Not -BeGreaterThan 2
+        }
+
+        It 'Returns an error for an invalid Azure Cloud name' {
+            Get-AzClientCertificate -Environment 'NonExistingCloud' -ErrorVariable 'err' -ErrorAction 'SilentlyContinue'
+            $err.Count | Should -Not -Be 0
+            $err[0].Exception.Message | Should -Be 'Invalid envorinment: NonExistingCloud'
+
+        }
+
+        It 'Can retrieve the ARM certificate for <Name>' {
+            { Get-AzClientCertificate $Name } | Should -Not -Throw
+            (Get-AzClientCertificate $Name).Certificate  | Should -Not -BeNullOrEmpty
+            @(Get-AzClientCertificate $Name).Count | Should -Not -BeGreaterThan 2
+
+        } -TestCases @(
+            Get-AzEnvironment | ForEach-Object {
+                @{'Name' = $_.Name }
+            }
+        ) -Tag 'Slow'
     }
 }
