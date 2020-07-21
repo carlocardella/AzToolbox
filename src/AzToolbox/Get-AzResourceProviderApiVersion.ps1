@@ -42,10 +42,10 @@
 
     [CmdletBinding()]
     param (
-        [parameter(Mandatory, Position = 1, ValueFromPipeline, ValueFromPipelineByPropertyName)]
+        [parameter(Mandatory, Position = 0, ValueFromPipeline, ValueFromPipelineByPropertyName)]
         [string]$ProviderNamespace,
 
-        [parameter(Position = 2, ValueFromPipelineByPropertyName)]
+        [parameter(Position = 1, ValueFromPipelineByPropertyName)]
         [string[]]$ResourceTypes
     )
 
@@ -58,7 +58,7 @@
                 Get-AzResourceProvider -ProviderNamespace $ProviderNamespace |
                     Select-Object -ExpandProperty 'ResourceTypes' |
                     Where-Object 'ResourceTypeName' -EQ $type |
-                    Select-Object @{l = 'ResourceTypeName'; e = {$_.ResourceTypeName}}, ApiVersions
+                    Select-Object @{l = 'ResourceTypeName'; e = { $_.ResourceTypeName } }, ApiVersions
             }
         }
     }
