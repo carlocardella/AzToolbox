@@ -29,5 +29,32 @@
         </ListEntries>
       </ListControl>
     </View>
+
+    <View>
+      <Name>AzureArmClientCertificate</Name>
+      <ViewSelectedBy>
+        <TypeName>AzureArmClientCertificate</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <PropertyName>Thumbprint</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>NotBefore</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>NotAfter</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>Certificate</PropertyName>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
   </ViewDefinitions>
 </Configuration>
