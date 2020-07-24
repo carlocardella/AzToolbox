@@ -46,4 +46,30 @@
       </NoteProperty>
     </Members>
   </Type>
+
+  <Type>
+    <Name>AzKeyVaultExpiringCertificates</Name>
+    <Members>
+      <NoteProperty>
+        <Name>SecretName</Name>
+        <Value>SecretName</Value>
+      </NoteProperty>
+      <NoteProperty>
+        <Name>Thumbprint</Name>
+        <Value>Thumbprint</Value>
+      </NoteProperty>
+      <NoteProperty>
+        <Name>Subject</Name>
+        <Value>Subject</Value>
+      </NoteProperty>
+      <NoteProperty>
+        <Name>NotAfter</Name>
+        <Value>NotAfter</Value>
+      </NoteProperty>
+      <NoteProperty>
+        <Name>DaysLeft</Name>
+        <Value>DaysLeft</Value>
+      </NoteProperty>
+    </Members>
+  </Type>
 </Types>
