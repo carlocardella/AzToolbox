@@ -39,17 +39,15 @@
     #>
 
     [CmdletBinding()]
-    [OutputType('Microsoft.Azure.AzureServicePrincipalExpiration')]
+    [OutputType('AzServicePrincipalExpiration')]
     param (
-        [parameter(Mandatory, Position = 1)]
+        [parameter(Mandatory, Position = 0)]
         [string[]]$SearchString,
 
         [Parameter()]
         ## set the number of days to alert before a key expires
         [int]$InNumberOfDays = 60
     )
-
-    Connect-AzureAccountInteractive | Out-Null
 
     # $keys = @()
     foreach ($item in $SearchString) {
@@ -76,7 +74,7 @@
                 @{l = 'EndDate'; e = { [datetime]($_.EndDate) } }, `
                     KeyId, `
                     Type
-                $keys.PSObject.TypeNames.Insert(0, 'Microsoft.Azure.AzureServicePrincipalExpiration')
+                $keys.PSObject.TypeNames.Insert(0, 'AzServicePrincipalExpiration')
                 Write-Output $keys
             }
         }
