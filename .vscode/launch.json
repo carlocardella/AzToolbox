@@ -9,6 +9,11 @@
             "type": "PowerShell",
             "request": "launch",
             "cwd": ""
+        },
+        {
+            "name": "Local Process with Kubernetes",
+            "type": "local-process-with-kubernetes.configuration",
+            "request": "launch"
         }
     ]
 }
