@@ -1,5 +1,5 @@
-Remove-Module 'ClusterConfig' -Force -ErrorAction 'SilentlyContinue'
-Import-Module $PSScriptRoot/../src/ClusterConfig -Force -ErrorAction 'Stop'
+Remove-Module 'AzToolbox' -Force -ErrorAction 'SilentlyContinue'
+Import-Module $PSScriptRoot/../src/AzToolbox -Force -ErrorAction 'Stop'
 $PesterPreference = [PesterConfiguration]::Default
 $PesterPreference.Should.ErrorAction = 'Continue'
 $PesterPreference.CodeCoverage.Enabled = $true
@@ -9,7 +9,7 @@ $PesterPreference.Output.Verbosity = 'Detailed'
 Describe 'CheckHelp' {
     Context "Help" -Tag 'CheckHelp' {
         # this initialization must be at the Context level, otherwise $functionNames will be out of scope for -TestCases
-        $functionsList = (Get-Command -Module 'ClusterConfig' | Where-Object -FilterScript { $_.CommandType -eq 'Function' }).Name
+        $functionsList = (Get-Command -Module 'AzToolbox' | Where-Object -FilterScript { $_.CommandType -eq 'Function' }).Name
         $functionNames = $functionsList | ForEach-Object {
             @{'functionName' = $_ }
         }
