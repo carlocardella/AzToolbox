@@ -7,9 +7,10 @@
     The application id of the application to add the credentials to
     
     .PARAMETER CertificatePath
+    Path to the .cer file to add
 
     .EXAMPLE
-    Add-AzServicePrincipalCertificate -ApplicationId 05f3227b-09d1-4bc6-85c8-8db6b349af67 -CertificatePath C:\Temp\MyNewCert.cer
+    Add-AzServicePrincipalCertificate -ApplicationId 84f121e6-bb47-568f-912f-410c1824ebe1 -CertificatePath C:\Temp\MyNewCert.cer
     #>
     [CmdletBinding()]
     param(

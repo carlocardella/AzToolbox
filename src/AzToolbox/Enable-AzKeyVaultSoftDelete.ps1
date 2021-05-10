@@ -1,4 +1,4 @@
-﻿function Enable-AzureKeyVaultSoftDelete {
+﻿function Enable-AzKeyVaultSoftDelete {
     <#
     .SYNOPSIS
     Enable Soft Delete in the given KeyVault
@@ -10,7 +10,7 @@
     Suppress confirmation prompts
 
     .EXAMPLE
-    Enable-AzureKeyVaultSoftDelete -VaultName 'myKeyvault' -Force
+    Enable-AzKeyVaultSoftDelete -VaultName 'myKeyvault' -Force
     
     .NOTES
     https://blogs.technet.microsoft.com/kv/2017/05/10/azure-key-vault-recovery-options/
@@ -38,7 +38,7 @@
             ($resource = Get-AzResource -ResourceId (Get-AzKeyVault -VaultName $vault).ResourceId).Properties | Add-Member -MemberType NoteProperty -Name enableSoftDelete -Value 'True'
 
             if ($Force -or ($PScmdlet.ShouldProcess($vault, 'Enable Soft Delete'))) {
-                if ($Force -or ($PScmdlet.ShouldContinue("Enable Soft Detele on KeyVault $vault?", 'Enable Soft Delete'))) {
+                if ($Force -or ($PScmdlet.ShouldContinue("Enable Soft Delete on KeyVault $vault?", 'Enable Soft Delete'))) {
                     Set-AzResource -resourceid $resource.ResourceId -Properties $resource.Properties -Force
                 }
             }
