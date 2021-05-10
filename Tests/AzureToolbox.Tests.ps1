@@ -54,4 +54,17 @@ Describe 'AzToolbox' {
             }
         ) -Tag 'Slow'
     }
+
+    Context -Name 'Get-AzResourceProviderApiVersion' -Tag 'GetAzResourceProviderApiVersion', 'Slow' {
+        # todo: mock Get-AzResourceProvider
+        It "Returns API version for <RP>" {
+            { Get-AzResourceProviderApiVersion $RP } | Should -Not -Throw
+            $ov = Get-AzResourceProviderApiVersion -ProviderNamespace $RP
+            $ov.Count | Should -BeGreaterThan 1
+        } -TestCases @(
+            @{'RP' = 'Microsoft.Automation' },
+            @{'RP' = 'Microsoft.ContainerService' },
+            @{'RP' = 'Microsoft.Storage' }
+        )
+    }
 }
