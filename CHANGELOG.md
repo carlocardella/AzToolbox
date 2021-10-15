@@ -8,6 +8,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ## Log
 
+## [0.6.0] - 2021-10-14
+
+### Added
+
+* Get-AzServiceTagJsonFile
+
+### Changed
+
+* Removed beta tag
+
 ## [0.5.0] - 2021-05-10
 
 ### Added
