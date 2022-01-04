@@ -8,6 +8,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ## Log
 
+## ## [0.6.1] - 2022-01-03
+
+### Added
+
+* Added explicit module dependency on Az.Resources
+
 ## [0.6.0] - 2021-10-14
 
 ### Added
