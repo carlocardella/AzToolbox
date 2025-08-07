@@ -12,7 +12,7 @@
     RootModule           = 'AzToolbox.psm1'
 
     # Version number of this module.
-    ModuleVersion        = '0.7.0'
+    ModuleVersion        = '0.8.0'
 
     # Supported PSEditions
     CompatiblePSEditions = 'Core', 'Desktop'
@@ -79,7 +79,8 @@
     'Get-AzResourceProviderLocation', 'Save-AzCliReleaseAsset', 
     'Test-AzKeyVaultCertificateAutorotation', 
     'Update-AzKeyVaultSecretWithTags',
-    'Get-AzServiceTagJsonFile', 'Find-AzAksNodeImage', 'Get-AzAvailabilityZoneDistribution'
+    'Get-AzServiceTagJsonFile', 'Find-AzAksNodeImage', 'Get-AzAvailabilityZoneDistribution',
+    'Get-AzVmSkuDetails'
 
     # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
     CmdletsToExport      = '*'
