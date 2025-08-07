@@ -56,5 +56,44 @@
         </ListEntries>
       </ListControl>
     </View>
+
+    <View>
+      <Name>AzVmSkuDetailsList</Name>
+      <ViewSelectedBy>
+        <TypeName>AzVmSkuDetails</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <PropertyName>VmSku</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>Family</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>Subfamily</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>CpuType</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>Features</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>Version</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>Type</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>Description</PropertyName>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
   </ViewDefinitions>
 </Configuration>
