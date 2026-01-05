@@ -28,16 +28,28 @@ function Get-AzCosmosDBSqlRoleAssignmentDetail {
     Get-AzCosmosDBSqlRoleAssignment -AccountName $AccountName -ResourceGroupName $ResourceGroupName  -pv 'ra' | ForEach-Object {
         $servicePrincipal = Get-AzADServicePrincipal -ObjectId $_.PrincipalId -ErrorAction SilentlyContinue 
 
-        [PSCustomObject]@{
-            ResourceName      = $ResourceName
-            ResourceGroupName = $ResourceGroupName
-            ResourceType      = $ResourceType
-            DisplayName       = ${servicePrincipal}?.DisplayName ?? 'unavailable'
-            ApplicationId     = ${servicePrincipal}?.AppId ?? 'unavailable'
-            ObjectId          = ${servicePrincipal}?.Id ?? 'unavailable'
-            Scope             = $ra.Scope
-            RoleAssignment    = $ra.RoleDefinitionId.Split('/')[-1] -eq '1' ? 'Data Reader' : 'Data Contributor'
-            RoleDefinitionId  = $ra.RoleDefinitionId
+        if ($ExecutionContext.SessionState.LanguageMode -eq 'ConstrainedLanguage') {
+            $_ | select-object @{l = 'AccountName'; e = { $AccountName } },
+            @{l = 'ResourceGroupName'; e = { $ResourceGroupName } },
+            @{l = 'DisplayName'; e = { ${servicePrincipal}?.DisplayName ?? 'unavailable' } },
+            @{l = 'ApplicationId'; e = { ${servicePrincipal}?.AppId ?? 'unavailable' } },
+            @{l = 'ObjectId'; e = { ${servicePrincipal}?.Id ?? 'unavailable' } },
+            @{l = 'Scope'; e = { $ra.Scope } },
+            @{l = 'RoleAssignment'; e = { $ra.RoleDefinitionId.Split('/')[-1] -eq '1' ? 'Data Reader' : 'Data Contributor' } },
+            @{l = 'RoleDefinitionId'; e = { $ra.RoleDefinitionId } }
+        }
+        else {
+            [PSCustomObject]@{
+                ResourceName      = $ResourceName
+                ResourceGroupName = $ResourceGroupName
+                ResourceType      = $ResourceType
+                DisplayName       = ${servicePrincipal}?.DisplayName ?? 'unavailable'
+                ApplicationId     = ${servicePrincipal}?.AppId ?? 'unavailable'
+                ObjectId          = ${servicePrincipal}?.Id ?? 'unavailable'
+                Scope             = $ra.Scope
+                RoleAssignment    = $ra.RoleDefinitionId.Split('/')[-1] -eq '1' ? 'Data Reader' : 'Data Contributor'
+                RoleDefinitionId  = $ra.RoleDefinitionId
+            }
         }
     }
 }
