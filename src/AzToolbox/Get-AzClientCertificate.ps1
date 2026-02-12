@@ -48,25 +48,25 @@ function Get-AzClientCertificate {
         }
         switch ($Environment) {
             'AzureCloud' {
-                $uri = "https://management.azure.com:24582/metadata/authentication?api-version=2015-01-01"
+                $uri = "https://admin.management.azure.com/metadata/authentication?api-version=2015-01-01"
                 $response = Invoke-WebRequest -Uri $uri -UseDefaultCredentials
                 $outObj = $response | Select-Object -ExpandProperty Content | ConvertFrom-Json | Select-Object -ExpandProperty 'clientCertificates'
             }
 
             'AzureChinaCloud' {
-                $uri = "https://management.chinacloudapi.cn:24582/metadata/authentication?api-version=2015-01-01"
+                $uri = "https://admin.management.chinacloudapi.cn/metadata/authentication?api-version=2015-01-01"
                 $response = Invoke-WebRequest -Uri $uri -UseDefaultCredentials
                 $outObj = $response | Select-Object -ExpandProperty Content | ConvertFrom-Json | Select-Object -ExpandProperty 'clientCertificates'
             }
 
             'AzureUSGovernment' {
-                $uri = "https://management.usgovcloudapi.net:24582/metadata/authentication?api-version=2015-01-01"
+                $uri = "https://admin.management.usgovcloudapi.net/metadata/authentication?api-version=2015-01-01"
                 $response = Invoke-WebRequest -Uri $uri -UseDefaultCredentials -Method 'Get'
                 $outObj = $response | Select-Object -ExpandProperty Content | ConvertFrom-Json | Select-Object -ExpandProperty 'clientCertificates'
             }
 
             'AzureGermanCloud' {
-                $uri = "https://management.microsoftazure.de:24582/metadata/authentication?api-version=2015-01-01"
+                $uri = "https://admin.management.microsoftazure.de/metadata/authentication?api-version=2015-01-01"
                 $response = Invoke-WebRequest -Uri $uri -UseDefaultCredentials
                 $outObj = $response | Select-Object -ExpandProperty Content | ConvertFrom-Json | Select-Object -ExpandProperty 'clientCertificates'
             }
